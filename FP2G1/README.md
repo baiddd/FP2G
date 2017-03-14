@@ -1,0 +1,1 @@
+This repository is intended to host the code implemented in the article 'From Papers to Github #1: A practical guide to handwritten digits classifier & dataset preprocessing in Python and tensorflow' available here: https://marvinler.github.io/2017/03/06/from-papers-to-github-1.html
