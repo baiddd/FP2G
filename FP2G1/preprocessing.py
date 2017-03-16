@@ -65,21 +65,10 @@ def expand_dataset(images, labels, n_distortions):
     new_labels_batch = np.array([label for label in labels for _ in distortions])
 
     # We don't forget to return the original images and labels (hence concatenate)
-    return np.concatenate([np.reshape(images, (-1, 28, 28)), new_images_batch]), \
+    return np.concatenate([images, np.reshape(new_images_batch, (-1, 784))]), \
            np.concatenate([labels, new_labels_batch])
 
 
 # Returns a batch from (images, labels) begining at begin ending at begin+batch_size-1 (included)
 def get_batch(images, labels, begin, batch_size):
     return images[begin: begin+batch_size], labels[begin: begin+batch_size]
-
-
-def main():
-    from tensorflow.examples.tutorials.mnist import input_data
-    mnist = input_data.read_data_sets('tmp/data', one_hot=True)
-
-    print 'lala'
-    print len(expand_dataset(mnist.train.images, mnist.train.labels, 3)[0])
-
-if __name__ == '__main__':
-    main()
